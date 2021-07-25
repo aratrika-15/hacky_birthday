@@ -150,7 +150,7 @@ const BookCard = ({category,books}) => {
                 <CardActionArea>
                 <CardMedia
                 className={classes.media}
-                image={book.img}
+                image={book.medium_img}
                 />
                 <CardContent>
                 <h2>{book.title}</h2>
