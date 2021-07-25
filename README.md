@@ -13,11 +13,11 @@ A website meant for book lovers.
 * Users can also search for books by title.
 
 Tech Stack:
-React
-Node.js
-Express.js
-Python
-Firebase
+1. React
+2. Node.js
+3. Express.js
+4. Python
+5. Firebase
 
 PS: Made for the MLH Hacky Birthday Hackathon by Astha Garg, Nisha Ramasubramanian and I.
 
