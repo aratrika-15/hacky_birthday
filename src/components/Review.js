@@ -16,7 +16,7 @@ const Review = ({review}) => {
           name='rating'
         /></td>
         </React.Fragment>
-        <p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;{review.content}</p>
+        <p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;{review.review}</p>
         </div>
     )
 }

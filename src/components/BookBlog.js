@@ -1,5 +1,7 @@
 import React from "react"
 import Review from "./Review"
+import axios from 'axios';
+import { useEffect } from 'react';
 //import ReactWordcloud from 'react-wordcloud';
 //import 'tippy.js/dist/tippy.css';
 //import 'tippy.js/animations/scale.css';
@@ -62,6 +64,24 @@ const BookBlog = ({book}) => {
             "value": 1,
           },
       ]);
+      
+
+
+      useEffect(()=>{
+        getReviews();
+    },[])
+    const getReviews = () => {
+      console.log("Here");
+      axios.get('http://localhost:5000/reviews/all_reviews',{
+        params:{isbn:book.isbn}
+      })
+      .then((response)=>{
+          console.log(response);
+          const allReviews=response.data.reviews;
+          setReviews(allReviews);
+      })
+      .catch(error => console.log(error));
+  }
       
       
     return (

@@ -102,7 +102,7 @@ const BookCard = ({category,books}) => {
     setIsbn(book.isbn)
     axios.post('http://localhost:5000/bookshelf/add_read', {
       book:book,
-      username:'aratrika510'
+      username:'astha1611'
     })
     .then((response) => {
       console.log(response);
@@ -129,13 +129,14 @@ const BookCard = ({category,books}) => {
       rating:rating,
       review:review,
       isbn:isbn,
-      username:'aratrika510'
+      username:'astha1611'
     })
     .then((response) => {
       console.log(response);
     }, (error) => {
       console.log(error);
     });
+    setBooksRead(false)
 
   }
 
