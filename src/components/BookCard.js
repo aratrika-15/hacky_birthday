@@ -41,6 +41,7 @@ const BookCard = ({category,books}) => {
     const [ booksRead, setBooksRead ]=useState(false)
     const [ rating, setRating ] = useState(0)
     const [ review, setReview ] = useState("")
+    const [ isbn, setIsbn ] = useState("")
 
     const useStyles = makeStyles({
         root: {
@@ -56,10 +57,6 @@ const BookCard = ({category,books}) => {
       });
     const classes = useStyles();
 
-    function changeRating(newRating) {
-      console.log(newRating)
-      setRating(newRating)
-    }
 
     function closeCurrentlyReading() {
       setCurrentlyReading(false);
@@ -101,6 +98,22 @@ const BookCard = ({category,books}) => {
 
   function openBooksRead(book) {
     setBooksRead(true)
+    console.log(book.isbn)
+    setIsbn(book.isbn)
+    axios.post('http://localhost:5000/bookshelf/add_read', {
+      book:book,
+      username:'aratrika510'
+    })
+    .then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    });
+  }
+
+  function changeRating(newRating) {
+    console.log(newRating)
+    setRating(newRating)
   }
 
   function handleReviewChange(e) {
@@ -112,6 +125,18 @@ const BookCard = ({category,books}) => {
     console.log(rating)
     console.log(review)
     
+    axios.post('http://localhost:5000/reviews/add_reviews',{
+      rating:rating,
+      review:review,
+      isbn:isbn,
+      username:'aratrika510'
+    })
+    .then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    });
+
   }
 
     return (

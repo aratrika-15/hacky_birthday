@@ -68,7 +68,7 @@ const BookBlog = ({book}) => {
         <div className="details">
         <h1>{book.title}</h1>
         <p>{book.author}</p>
-        <img src={book.img}/>
+        <img src={book.medium_img}/>
         <h2>Summary </h2>
         <p>{book.description}</p>
         <h2> Reviews </h2>
